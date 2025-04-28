@@ -1,0 +1,39 @@
+.tooltip {
+	padding: 3px 10px 6px 10px;
+	border: 1px solid beige;
+	background-color: sienna;
+	color: white;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 2;
+	pointer-events: none;
+	display: none;
+	font-family: consolas;
+}
+/* .ttipDiv {
+	display: inline-block;
+	color: white;
+	border-radius: 5px;
+	background-color: sienna;
+	padding: 3px 10px 6px 10px;
+	font-family: consolas;
+}
+#ttipTitle {
+	text-align: center;
+	color: gold;
+	font-weight: bold;
+	font-size: 14pt;
+}
+#ttipLeft {
+	color: goldenrod;
+	float: left;
+	text-align: left;
+}
+#ttipRight {
+	margin-left: 4px;
+	float: left;
+	text-align: left;
+}
+.ttdiv{
+	padding:4px 10px 6px 10px;
+} */

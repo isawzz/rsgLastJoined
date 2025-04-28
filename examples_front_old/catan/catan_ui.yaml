@@ -1,0 +1,19 @@
+TABLEDIM: 1000,800
+
+LAYOUT:
+  c0_80:
+    r0_75: M,deepSkyBlue
+    r1_25:
+      c0_25: S,powderBlue
+      c1_50: R,
+      c2_25: D,
+  c1_20:
+    r0_100__NumOpponents: S,sienna
+
+STRUCTURE: #the following structures will be built in named areas based on initial game data
+  M: [createHexGrid, [obj_type, board]]
+
+BEHAVIOR:
+  obj_type:
+    settlement: catanBoard
+    street: catanBoard

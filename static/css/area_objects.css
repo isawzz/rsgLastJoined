@@ -1,0 +1,34 @@
+.ao_centered{
+	max-width:280px;
+	background-color:red;
+	padding:15px;
+	margin:0 auto;
+}
+.ao_content{
+	width:100%;
+	color:#8f8;
+	background-color:#333;
+}
+table td:first-child{
+	width:75px;
+}
+.svg-container{
+	line-height:0;
+		display: table;
+border-collapse: collapse;
+
+}
+.ao_svg{
+display: table-cell;
+border: 1px solid orange;
+margin: 0;
+padding: 0;
+}
+.ao_rect {
+	shape-rendering:crispEdges;
+	stroke:none;
+	fill:white;
+}
+td{
+	vertical-align:top;
+}

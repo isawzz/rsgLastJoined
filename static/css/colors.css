@@ -1,0 +1,263 @@
+.white-on-trans {
+	background-color: transparent;
+	color: white;
+}
+.navy-on-silver {
+	background-color: silver;
+	color: navy;
+}
+/* Color Theme Swatches in Hex */
+.Elegant-Fresh-1-hex {
+	color: #011c40;
+}
+.Elegant-Fresh-2-hex {
+	color: #011126;
+}
+.Elegant-Fresh-3-hex {
+	color: #6085a6;
+}
+.Elegant-Fresh-4-hex {
+	color: #d9d8d7;
+}
+.Elegant-Fresh-5-hex {
+	color: #734d45;
+}
+
+/* Color Theme Swatches in RGBA */
+.Elegant-Fresh-1-rgba {
+	color: rgba(1, 28, 63, 1);
+}
+.Elegant-Fresh-2-rgba {
+	color: rgba(1, 17, 38, 1);
+}
+.Elegant-Fresh-3-rgba {
+	color: rgba(96, 133, 165, 1);
+}
+.Elegant-Fresh-4-rgba {
+	color: rgba(216, 216, 214, 1);
+}
+.Elegant-Fresh-5-rgba {
+	color: rgba(114, 77, 68, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Elegant-Fresh-1-hsla {
+	color: hsla(214, 96, 12, 1);
+}
+.Elegant-Fresh-2-hsla {
+	color: hsla(214, 94, 7, 1);
+}
+.Elegant-Fresh-3-hsla {
+	color: hsla(208, 28, 51, 1);
+}
+.Elegant-Fresh-4-hsla {
+	color: hsla(30, 2, 84, 1);
+}
+.Elegant-Fresh-5-hsla {
+	color: hsla(10, 25, 36, 1);
+}
+
+/* Color Theme Swatches in Hex */
+.Catan-1-hex {
+	color: #8f6f4c;
+}
+.Catan-2-hex {
+	color: #5b5f1a;
+}
+.Catan-3-hex {
+	color: #92860f;
+}
+.Catan-4-hex {
+	color: #e39122;
+}
+.Catan-5-hex {
+	color: #aa570d;
+}
+
+/* Color Theme Swatches in RGBA */
+.Catan-1-rgba {
+	color: rgba(142, 110, 75, 1);
+}
+.Catan-2-rgba {
+	color: rgba(91, 94, 26, 1);
+}
+.Catan-3-rgba {
+	color: rgba(145, 133, 14, 1);
+}
+.Catan-4-rgba {
+	color: rgba(226, 144, 33, 1);
+}
+.Catan-5-rgba {
+	color: rgba(170, 86, 13, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Catan-1-hsla {
+	color: hsla(31, 30, 42, 1);
+}
+.Catan-2-hsla {
+	color: hsla(63, 57, 23, 1);
+}
+.Catan-3-hsla {
+	color: hsla(54, 81, 31, 1);
+}
+.Catan-4-hsla {
+	color: hsla(34, 77, 51, 1);
+}
+.Catan-5-hsla {
+	color: hsla(28, 85, 35, 1);
+}
+
+/* Color Theme Swatches in Hex */
+.Shades-of-Blue-Violet-1-hex {
+	color: #060c1e;
+}
+.Shades-of-Blue-Violet-2-hex {
+	color: #1b006d;
+}
+.Shades-of-Blue-Violet-3-hex {
+	color: #160f26;
+}
+.Shades-of-Blue-Violet-4-hex {
+	color: #210067;
+}
+.Shades-of-Blue-Violet-5-hex {
+	color: #330099;
+}
+
+/* Color Theme Swatches in RGBA */
+.Shades-of-Blue-Violet-1-rgba {
+	color: rgba(5, 12, 29, 1);
+}
+.Shades-of-Blue-Violet-2-rgba {
+	color: rgba(26, 0, 109, 1);
+}
+.Shades-of-Blue-Violet-3-rgba {
+	color: rgba(22, 15, 38, 1);
+}
+.Shades-of-Blue-Violet-4-rgba {
+	color: rgba(33, 0, 103, 1);
+}
+.Shades-of-Blue-Violet-5-rgba {
+	color: rgba(51, 0, 153, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Shades-of-Blue-Violet-1-hsla {
+	color: hsla(224, 66, 7, 1);
+}
+.Shades-of-Blue-Violet-2-hsla {
+	color: hsla(254, 100, 21, 1);
+}
+.Shades-of-Blue-Violet-3-hsla {
+	color: hsla(258, 43, 10, 1);
+}
+.Shades-of-Blue-Violet-4-hsla {
+	color: hsla(259, 100, 20, 1);
+}
+.Shades-of-Blue-Violet-5-hsla {
+	color: hsla(260, 100, 30, 1);
+}
+
+/* Color Theme Swatches in Hex */
+.Illustration-1-hex {
+	color: #2c2d40;
+}
+.Illustration-2-hex {
+	color: #495073;
+}
+.Illustration-3-hex {
+	color: #bf9d8a;
+}
+.Illustration-4-hex {
+	color: #735246;
+}
+.Illustration-5-hex {
+	color: #734848;
+}
+
+/* Color Theme Swatches in RGBA */
+.Illustration-1-rgba {
+	color: rgba(43, 44, 63, 1);
+}
+.Illustration-2-rgba {
+	color: rgba(73, 79, 114, 1);
+}
+.Illustration-3-rgba {
+	color: rgba(191, 157, 137, 1);
+}
+.Illustration-4-rgba {
+	color: rgba(114, 81, 69, 1);
+}
+.Illustration-5-rgba {
+	color: rgba(114, 72, 72, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Illustration-1-hsla {
+	color: hsla(236, 18, 21, 1);
+}
+.Illustration-2-hsla {
+	color: hsla(230, 21, 36, 1);
+}
+.Illustration-3-hsla {
+	color: hsla(22, 29, 64, 1);
+}
+.Illustration-4-hsla {
+	color: hsla(16, 24, 36, 1);
+}
+.Illustration-5-hsla {
+	color: hsla(0, 22, 36, 1);
+}
+
+/* Color Theme Swatches in Hex */
+.beat-header-1-hex {
+	color: #466c8c;
+}
+.beat-header-2-hex {
+	color: #395873;
+}
+.beat-header-3-hex {
+	color: #2d4459;
+}
+.beat-header-4-hex {
+	color: #203140;
+}
+.beat-header-5-hex {
+	color: #141f26;
+}
+
+/* Color Theme Swatches in RGBA */
+.beat-header-1-rgba {
+	color: rgba(70, 108, 140, 1);
+}
+.beat-header-2-rgba {
+	color: rgba(57, 88, 115, 1);
+}
+.beat-header-3-rgba {
+	color: rgba(45, 68, 89, 1);
+}
+.beat-header-4-rgba {
+	color: rgba(32, 49, 64, 1);
+}
+.beat-header-5-rgba {
+	color: rgba(20, 31, 38, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.beat-header-1-hsla {
+	color: hsla(207, 33, 41, 1);
+}
+.beat-header-2-hsla {
+	color: hsla(207, 33, 33, 1);
+}
+.beat-header-3-hsla {
+	color: hsla(208, 32, 26, 1);
+}
+.beat-header-4-hsla {
+	color: hsla(208, 33, 18, 1);
+}
+.beat-header-5-hsla {
+	color: hsla(203, 31, 11, 1);
+}
+

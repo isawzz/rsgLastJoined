@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>v01</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" crossorigin="anonymous" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.12.2/js-yaml.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<script>
+		window.onload = () => _start(); // _mStart | _hStart | initSys | _mtest | _sessionStart | _masterStart
+
+		var JS_FILES = [
+
+			// 'old__s',//TODO
+			'old_work',//TODO
+			'_start',
+			'_work',
+			'all',
+			'areas',
+			'behavior',//TODO
+			'clear',
+			'color',//TODO
+			'create',
+			'go',//TODO
+			'helpers', //TODO: gehoert mal ausgemistet!!!
+			'helpersNew',//TODO
+			'hPresenters',//TODO
+			'interact',
+			'interaction_util',
+			'MS_tests',//TODO
+			'MS',
+			'MS_dep',
+			'present',
+			'presentation_util',
+			'process',
+			'server',
+			'settings',
+			'structures',
+			'testing',
+			// 'tooltips',//TODO
+			'userspec',
+
+		];
+
+		var CSS_FILES = [
+			'favicon',
+			'gsm',
+			'pageLayout',
+			'pageLayoutNew',
+			'selectStyle',
+			'tabs',
+			'tooltips',
+			'area_objects',
+			'MS',
+		];
+		var OFFLINE = false; //DO NOT CHANGE! TODO: support offline
+	</script>
+
+	<!-- #region loading -->
+	<script>
+		function scriptLoader(src, dir, isLibrary = false, isOFFLINE = false) {
+			let script = document.createElement('script');
+			if (isLibrary && isOFFLINE) {
+				script.src = src;
+			} else {
+				let path = '';
+				path = (isLibrary ? '/jslibs/' : '/') + dir + '/';
+				path += src + '.js';
+				script.src = path;
+			}
+			document.getElementsByTagName('head')[0].appendChild(script);
+		}
+		function styleLoader(href, dir, isLibrary = false, isOFFLINE = false) {
+			let style = document.createElement('link');
+			style.rel = href == 'favicon' ? 'shortcut icon' : 'stylesheet';
+			if (isLibrary && isOFFLINE) {
+				style.href = href;
+			} else {
+				let path = '';
+				path = (isLibrary ? '/csslibs/' : '/') + dir + '/';
+				path += href + (href == 'favicon' ? '.ico' : '.css');
+				style.href = path;
+			}
+			document.getElementsByTagName('head')[0].appendChild(style);
+		}
+		for (const fname of CSS_FILES) styleLoader(fname, 'static/css', false, OFFLINE);
+		for (const fname of JS_FILES) scriptLoader(fname, 'static/js', false, OFFLINE);
+
+	</script>
+	<!-- #endregion loading -->
+
+	<!-- testing svg texture images -->
+
+	<!-- #region HTML -->
+	<div id="R_d_root" class="layout1">
+		<div id="a_d_header" class="area">
+			<div id='a_d_outerDivGameName' style='float:right;margin:4px;color:dimgray;'>
+				Game:
+				<div id='a_d_divGameName' class='header_name'>Catan</div>
+			</div>
+			<div id='a_d_divPlayerNames' style='float:left;margin:4px 10px;'>
+				Players:&nbsp;
+			</div>
+		</div>
+
+		<div id="a_d_action_header" class="area">
+			<p>actions</p>
+		</div>
+		<div id="a_d_status" class="area">
+			<div id="c_d_statusText">status</div>
+		</div>
+		<div id="a_d_history_header" class="area">
+			<p>log</p>
+		</div>
+
+		<div id="a_d_actions" class="area">
+			<div id="a_d_divSelect" class="sidenav1"></div>
+		</div>
+		<div id="a_d_game" class="area"></div>
+		<div id="a_d_log" class="area"></div>
+
+		<div id="a_d_buttons" class="area">
+			<button onclick="onClickToggleButton(this,[['view:default',fullViewObjects],['view:minimized',minimizeObjects]])">view:default</button>
+			<button onclick="onClickRestart()">restart</button>
+			<!-- <button onclick="onClickRemoveInteraction()">- inter</button>
+			<button onclick="onClickAddInteraction()">+ inter</button>
+			<button onclick="onClickRemoveActions()">- actions</button>
+			<button onclick="onClickAddActions()">+ actions</button>
+			<button onclick="onClickRemoveDefaultObjects()">- objects</button>
+			<button onclick="onClickAddDefaultObjects()">+ objects</button>
+			<button onclick="onClickRemoveDefaultPlayers()">- players</button>
+			<button onclick="onClickAddDefaultPlayers()">+ players</button> -->
+			<br />
+			<br />
+			<!-- <button onclick="_mStart('tictactoe')">tic tac toe</button>
+			<button onclick="_mStart('catan') ">catan</button> -->
+			<br />
+			<br />
+			<button id='c_b_Step' onclick="if (FLASK) onClickStep(); else console.log('set FLASK=true in game.html!');">STEP</button>
+			<button id='c_b_RunToEnd' onclick="onClickRunToEnd()">run to end</button>
+
+			<!-- <button id='c_b_ShowEvents' onclick="onClickToggle(this,'showEvents')">+ show events</button> -->
+			<button id='c_b_Pass' class='hidden' onclick="onClickPass()">pass</button>
+			<div id='tempFreezer' class='hidden'>
+				<h1>processing...</h1>
+				<button id='bStop' class='buttonSpecial' onclick="onClickStop()">STOP!</button>
+
+			</div>
+		</div>
+		<div id="a_d_testing" class="area">
+			<div class="tab">
+				<button id='c_b_London' class="tablinks active" onclick="openTabTesting('London')">objects</button>
+				<button id='c_b_Vienna' class="tablinks" onclick="openTabTesting('Vienna')">players</button>
+				<button id='c_b_Redmond' class="tablinks" onclick="openTabTesting('Redmond')">main menu</button>
+				<button id='c_b_Paris' class="tablinks" onclick="openTabTesting('Paris')">editor</button>
+				<button id='c_b_Seattle' class="tablinks" onclick="openTabTesting('Seattle')">settings</button>
+				<button id='c_b_Tokyo' class="tablinks" onclick="openTabTesting('Tokyo')">DIV</button>
+				<button id='c_b_Bangor' class="tablinks" onclick="openTabTesting('Bangor')">G</button>
+			</div>
+			<!-- keep this in block display! set default opened tab in __settings.js -->
+			<div id="a_d_London" class="tabcontent" style="display:block">
+				<div id='a_d_objects' class='divInTab' style='position:absolute;left:1%;top:6%;width:98%;height:92%;margin:0;padding:0;'>
+					<!-- <svg width='98%' height='92%' style='margin:0;padding:0;position:absolute;top:6%;left:1%;'>
+						<g id='go'></g>
+					</svg> -->
+				</div>
+			</div>
+
+			<div id="a_d_Vienna" class="tabcontent">
+				<div id='a_d_players' class='divInTab'>
+					<!-- <svg width='98%' height='92%' style='margin:0;padding:0;position:absolute;top:6%;left:1%;'>
+						<g id='gp'></g>
+					</svg> -->
+				</div>
+			</div>
+
+			<div id="a_d_Redmond" class="tabcontent">
+				<div class='divInTab' id='a_d_main_menu'>
+
+				</div>
+			</div>
+			<div id="a_d_Paris" class="tabcontent">
+				<div class='divInTab' id='a_d_editor'></div>
+			</div>
+
+			<div id="a_d_Seattle" class="tabcontent">
+				<div class='divInTab' id='a_d_settings'>
+					<fieldset>
+						<legend>play mode</legend>
+						<input id='c_b_settings_solo' type="radio" name="playMode" value="solo" onclick='setPlayMode("solo")'>solo<br>
+						<input id='c_b_settings_hotseat' type="radio" name="playMode" value="hotseat" onclick='setPlayMode("hotseat")'>hotseat<br>
+						<input id='c_b_settings_dev' type="radio" name="playMode" value="dev" onclick='setPlayMode("dev")'>dev<br>
+					</fieldset>
+					<fieldset id='a_d_autoplay_buttons'>
+						<legend>autoplay</legend>
+						<br />
+						<br />
+						<button id='c_b_NextPlayer' onclick="onClickRunToNextPlayer()">next player</button>
+						<button id='c_b_NextTurn' onclick="onClickRunToNextTurn()">next turn</button>
+						<br />
+					</fieldset>
+					<fieldset>
+						<legend>miscellaneous</legend>
+						<button id="c_b_TTip" onclick="toggleTooltips(this)">tooltips: OFF</button>
+						<br />
+						<br />
+						<button onclick="colorSystem()">new colors</button>
+					</fieldset>
+					<fieldset>
+						<legend>choose game</legend>
+						<button onclick="_start('tictactoe')">tic tac toe</button>
+						<button onclick="_start('catan') ">catan</button>
+						<br />
+						<br />
+					</fieldset>
+				</div>
+			</div>
+
+			<div id="a_d_Tokyo" class="tabcontent">
+				<div id='a_d_div_testing' class='divInTab'></div>
+			</div>
+			<div id="a_d_Bangor" class="tabcontent">
+				<div id='a_d_G_tester' class='divInTab'>
+					<svg class='hidden' width='98%' height='92%' style='margin:0;padding:0;position:absolute;top:6%;left:1%;'>
+						<defs>
+							<pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+								<image xlink:href="/static/assets/wood1.jpg" x="0" y="0" width="300" height="200" />
+							</pattern>
+						</defs>
+						<g id='a_g_testing'>
+							<circle cx="50" cy="50" r="50" fill="yellow" />
+						</g>
+					</svg>
+					<svg height="100" width="100" class='hidden'>
+						<circle cx="50" cy="50" r="50" fill="url(#img1)" />
+					</svg>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="a_d_options" class="area">
+			<div class='buttonBlock'>
+				<br />
+				<br />
+			</div>
+		</div> -->
+	</div>
+
+	<div id="tooltip" class="tooltip" style='position:fixed;'>
+		<!-- <div id="ttipTitle">prop</div>
+		<div id="ttipLeft">prop</div>
+		<div id="ttipRight">val</div> -->
+	</div>
+	<div id='freezer' class='hidden'>
+		<h1>NOT YOUR TURN!!!</h1>
+
+	</div>
+	<!-- #endregion HTML -->
+
+	<!-- trash code -->
+	<script type="text/javascript">
+		// Using JQuery selectors to add onFocus and onBlur event handlers
+
+		// $(document).ready(function () {
+
+		// 	// Add the "focus" value to class attribute
+		// 	$('ul.radio li').focusin(function () {
+		// 		$(this).addClass('focus');
+		// 	}
+		// 	);
+
+		// 	// Remove the "focus" value to class attribute
+		// 	$('ul.radio li').focusout(function () {
+		// 		$(this).removeClass('focus');
+		// 	}
+		// 	);
+
+		// }
+		// );
+
+	</script>
+	<!-- -->
+</body>
+
+</html>

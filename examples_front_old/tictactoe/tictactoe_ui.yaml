@@ -1,0 +1,7 @@
+TABLEDIM: 540,480
+
+LAYOUT:
+  c0_100: Board,
+
+STRUCTURE: #params refer to objects in initial data
+  Board: [createQuadGrid, [obj_type, Board]]

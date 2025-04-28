@@ -1,0 +1,23 @@
+SETTINGS:
+  colors: ["rgb(3, 74, 166)","rgb(83, 111, 166)",  "rgb(126, 174, 217)"] 
+
+TABLES:
+  a_d_game: [1000, 800]
+
+STRUCTURES:
+  P:
+    location: a_d_game
+    bg: '#000000' 
+    bounds: [0, 0, 1000, 50, px]
+  M:
+    location: a_d_game
+    bg: '#000000'
+    bounds: [0, 50, 1000, 700, px]
+    structure: 
+      type: quadGrid 
+      object_pool: G.table
+      cond: [obj_type, Board]
+  Dummy:
+    location: a_d_game
+    bg: '#000000' 
+    bounds: [0, 750, 1000, 50, px]

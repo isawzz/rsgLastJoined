@@ -1,0 +1,137 @@
+.pNice{
+	margin-left:10px;
+	overflow:auto;
+}
+.hit_invisible {
+	pointer-events: none;
+}
+.hidden {
+	display: none;
+}
+.mouseDisabled {
+	pointer-events: none;
+}
+
+.overlay {
+	fill: transparent;
+}
+/* .overlay:hover {
+	fill: rgba(0, 0, 0, 0.2);
+}
+.overlay_line:hover {
+	stroke: rgba(0, 0, 0, 0.2);
+} */
+/* #region sel colors: TODO: make all of them css variables! */
+.selGreen {
+	fill: rgba(0, 255, 0, 0.3);
+}
+.selBlue {
+	fill: rgba(0, 0, 255, 0.3);
+}
+.selRed {
+	fill: rgba(255, 0, 0, 0.3);
+}
+.selYellow {
+	fill: rgba(255, 255, 0, 0.3);
+}
+.selOrange {
+	fill: rgba(255, 69, 0, 0.3);
+}
+.selViolet {
+	fill: rgba(148, 0, 211, 0.3);
+}
+.selWhite {
+	fill: rgba(255, 255, 255, 0.3);
+}
+.selBlack {
+	fill: rgba(0, 0, 0, 0.3);
+	background-color: red;
+}
+.selSilver {
+	fill: rgba(192, 192, 192, 0.4);
+}
+/* #endregion sel colors */
+
+/* #region frames for some reason these dont work!!! */
+.frameGreen {
+	stroke: rgba(0, 255, 0, 0.3);
+	stroke-width: 2;
+}
+.frameBlue {
+	stroke: rgba(0, 0, 255, 0.3);
+	stroke-width: 2;
+}
+.frameRed {
+	stroke: rgba(255, 0, 0, 0.3);
+	stroke-width: 2;
+}
+.frameYellow {
+	stroke: rgba(255, 255, 0, 0.3);
+	stroke-width: 2;
+}
+.frameOrange {
+	stroke: rgba(255, 69, 0, 0.3);
+	stroke-width: 2;
+}
+.frameViolet {
+	stroke: rgba(148, 0, 211, 0.3);
+	stroke-width: 2;
+}
+.frameWhite {
+	stroke: rgba(255, 255, 255, 0.3);
+	stroke-width: 2;
+}
+.frameBlack {
+	stroke: rgba(0, 0, 0, 0.3);
+	stroke-width: 2;
+}
+.frameSilver {
+	stroke: rgba(192, 192, 192, 0.4);
+	stroke-width: 2;
+}
+/* #endregion for some reason these dont work!!! */
+
+/* #region old */
+.overlay.highlighted {
+	fill: rgba(255, 255, 0, 0.3);
+}
+.overlay.selected {
+	fill: rgba(255, 0, 0, 0.3);
+	transition: 0.3s;
+}
+.overlay.selGreen {
+	fill: rgba(0, 255, 0, 0.3);
+}
+.overlay.selBlue {
+	fill: rgba(0, 0, 255, 0.3);
+}
+.overlay_line {
+	stroke: transparent;
+}
+.overlay_line.highlighted {
+	stroke: rgba(255, 255, 0, 0.3);
+}
+.overlay_line.selected {
+	stroke: rgba(255, 0, 0, 0.3);
+}
+.overlay_line.selGreen {
+	stroke: rgba(0, 255, 0, 0.3);
+}
+.overlay_line.selBlue {
+	stroke: rgba(0, 0, 255, 0.3);
+}
+/* #endregion old */
+
+.blink {
+	animation: example 0.5s infinite;
+}
+@keyframes example {
+	from {
+		background-color: '#FAD302';
+		opacity: 0.2;
+	}
+	to {
+		background-color: var(--bgWinner);
+		opacity: 1;
+	}
+}

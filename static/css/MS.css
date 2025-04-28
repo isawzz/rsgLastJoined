@@ -1,0 +1,71 @@
+.high{
+	fill: #ccff00;
+	stroke: #ccff00;
+	background-color: #ccff00;
+	color: black;
+}
+.highFrame{
+	/* fill: #ccff0080; */
+	stroke: #ccff00;
+	stroke-width: 2px;
+	border: 2px solid #ccff00;
+	color:  #ccff00;
+	color: black;
+}
+.lineHighFrame{
+	fill: #ccff0099;
+	stroke: #ccff0099;
+}
+
+/* #region table */
+.tttable{
+	padding:2px;
+	border-radius:4px;
+	text-align: left;
+	border-collapse: separate;
+	border-spacing: 4px 2px;
+}
+.hallo{
+	display: inline-block;
+	color: var(--fgButton);
+	margin: 2px;
+	padding: 0px;
+	font-size: 12pt;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	border-radius: 12px;
+	padding: 6px 6px 6px 8px;
+	margin-top: 6px;
+	background-color: var(--bgButton);
+}
+.tttitle{
+	color:silver;
+}
+.tttable th{
+	padding-top: var(--tableRowPadding);
+	vertical-align:top;
+	color:silver;
+}
+.tttable td {
+	padding-top: var(--tableRowPadding);
+	vertical-align:top;
+	color:gold;
+}
+.tttable td .obj{
+	padding:4px 12px; 
+	margin-top:var(--upRowPadding);
+}
+.up10{
+	margin-top:var(--upRowPadding);
+}
+.up5{
+	margin-top:calc(var(--upRowPadding)/2);
+
+}
+.up2{
+	margin-top:calc(var(--upRowPadding)/4);
+}
+
+/* #endregion */

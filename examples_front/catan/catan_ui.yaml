@@ -1,0 +1,33 @@
+SETTINGS:
+  colors: ['rgb(126, 174, 217)','rgb(83, 111, 166)','rgb(4, 173, 191)']
+  # colors: ['rgb(3, 74, 166)','rgb(0, 6, 13)','rgb(83, 119, 166)']
+  gap: 5
+  dev:
+    keywords:
+      action: [[hex,'place robber'],[Corner,'settlement or city'],[Edge, road]]
+  assets:
+    textures: [wood, wheat, sheep, ore, brick]
+
+TABLES: #existing areas: could eliminate, make option instead
+  a_d_game: [1000, 800]
+
+STRUCTURES: #struct names have to be unique!
+  M:
+    location: a_d_game #this is default, not needed
+    bounds: [0, 0, 800, 600, px]
+    structure:
+      type: hexGrid
+      object_pool: G.table
+      cond: [obj_type, board]
+  Players:
+    location: a_d_game #location must exist or be created before use, so here could refer to M
+    bounds: [800, 0, 200, 800, px]
+    structure:
+      type: areaRows
+      object_pool: G.players
+  PMain:
+    location: a_d_game
+    bounds: [0, 600, 800, 200, px]
+    
+
+

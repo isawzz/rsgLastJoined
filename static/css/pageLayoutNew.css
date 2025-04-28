@@ -1,0 +1,85 @@
+:root {
+	--bgBody: null;
+	--bgTabActive: null;
+	--fgButton: null;
+	--bgButton: null;
+	--bgButtonHover: null;
+	--bgButtonActive: null;
+	--bgTabContent: null;
+	--bgWinner: null;
+
+	--wGame: 800px;
+	--wActions: 200px;
+	--wLog: 200px;
+	--hStatus: 40px;
+	--hGame: 800px;
+	--hTesting: 800px;
+	--hTabs: 40px;
+
+	--tableRowPadding: 6px;
+	--upRowPadding: -10px;
+
+}
+/* #region button */
+button {
+	display: inline-block;
+	color: var(--fgButton);
+	margin: 2px;
+	padding: 0px;
+	font-size: 12pt;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	border-radius: 12px;
+	width: 160px;
+	padding: 6px 6px 6px 8px;
+	margin-top: 6px;
+	background-color: var(--bgButton);
+}
+button:hover {
+	background-color: var(--bgButtonHover);
+}
+button:active {
+	background-color: var(--bgButtonActive);
+}
+/* #endregion button */
+/* #region html,body */
+body,
+html {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: var(--bgBody);
+}
+/* #endregion html,body */
+/* #region layout */
+.layout1 {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: grid;
+	/* grid-template-columns: var(--wActions) var(--wGame) minmax(var(--wActions), auto); */
+	grid-template-columns: var(--wActions) var(--wGame) auto;
+	grid-template-rows:calc(2*var(--h_1)) var(--h_1)  var(--hGame) minmax(800px, auto);
+	/* grid-template-rows:calc(2*var(--h_1)) var(--h_1)  var(--hGame) minmax(800px, var(--h_3)); */
+	/* grid-template-rows:calc(2*var(--h_1)) var(--h_1)  var(--hGame) minmax(800px, auto); */
+	grid-template-areas:
+		'h h h'
+		'ah s hh'
+		'a g l'
+		'bl t t';
+	grid-gap: 4px;
+	background-color: null;
+	min-height: 100%;
+	width: 100%;
+	color: white;
+	/* border: 4px solid transparent; */
+	padding: 4px;
+	box-sizing: border-box;
+	z-index: -3;
+}
+
+
+

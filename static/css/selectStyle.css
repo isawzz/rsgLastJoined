@@ -1,0 +1,30 @@
+.sidenav1 {
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	/* background-color: #082a44; */
+	overflow-x: hidden;
+	text-align: left;
+}
+
+.sidenav1 a {
+	padding-top: 8px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	font-size: 16px;
+	color: #c4c3c3;
+	overflow: hidden;
+	display: block;
+}
+
+.sidenav1 .high {
+	cursor: pointer;
+	background-color:#ccff00;
+	color:black;
+	font-size: 20px;
+}
+.sidenav1 .selected {
+	background-color:#ccff00;
+	color:black;
+	font-size: 20px;
+}
