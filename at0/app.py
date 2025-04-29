@@ -11,6 +11,8 @@ from ttt import (
     check_win,
     check_draw
 )
+from flask import Flask, render_template, request, send_from_directory
+from flask_cors import CORS
 
 # Create an instance of the Flask class
 app = Flask(__name__)

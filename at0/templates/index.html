@@ -110,7 +110,7 @@
 
 			try {
 				// Fetch data from the /game_state endpoint
-				const response = await fetch('/game_state');
+				const response = await fetch('http://localhost:5000/game_state');
 
 				// Check if the request was successful
 				if (!response.ok) {
