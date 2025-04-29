@@ -15,7 +15,8 @@ from flask import Flask, render_template, request, send_from_directory
 from flask_cors import CORS
 
 # Create an instance of the Flask class
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
+CORS(app)
 
 # --- Flask Routes ---
 
