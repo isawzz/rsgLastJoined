@@ -110,6 +110,7 @@
 
 			try {
 				// Fetch data from the /game_state endpoint
+				let server = `https://moxito.online/at0/game_state`;
 				const response = await fetch('http://localhost:5000/game_state');
 
 				// Check if the request was successful

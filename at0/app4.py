@@ -22,8 +22,12 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
+    """
+    A simple placeholder route.
+    The client-side HTML/JS would typically be served separately
+    or rendered dynamically here if needed.
+    """
+    return "Tic-Tac-Toe Server API. Interact via /game_state and /make_move."
 
 
 @app.route('/game_state', methods=['GET'])
